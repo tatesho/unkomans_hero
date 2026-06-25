@@ -33,6 +33,7 @@ public class FallBlockSystem : MonoBehaviour
         yield return new WaitForSeconds(countSpace);
         countText.text = "0";
 
+        //‚±‚±‚Í—‚Æ‚·ˆ—‚Å‚·
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
