@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &29727031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8316432583469158288, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+  m_PrefabInstance: {fileID: 4965719490994413815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b278954105daacd459d52f9858276d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerContoller
 --- !u!1001 &60273320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2343,6 +2354,10 @@ PrefabInstance:
       propertyPath: normalBlockText
       value: 
       objectReference: {fileID: 1310505131}
+    - target: {fileID: 1069031506125491363, guid: 6382a919fa7271e45a32875897fd2cfc, type: 3}
+      propertyPath: playerContoroller
+      value: 
+      objectReference: {fileID: 29727031}
     - target: {fileID: 8519633206679588819, guid: 6382a919fa7271e45a32875897fd2cfc, type: 3}
       propertyPath: m_Name
       value: StageManager
