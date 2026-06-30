@@ -4,11 +4,11 @@ using UnityEngine;
 public class EnemyDetectionManager : MonoBehaviour
 {
     private Collider2D stompCollider;
-    private EnemyPatrol enemyPatrol;
+    private EnemyBase enemyBase;
     private Collider2D thisCollider;
     private void Start()
     {
-        enemyPatrol=GetComponentInParent<EnemyPatrol>();
+        enemyBase=GetComponentInParent<EnemyBase>();
         thisCollider= GetComponent<Collider2D>();
         stompCollider = GameObject.FindWithTag("StompCheck").GetComponent<Collider2D>();
     }
@@ -19,7 +19,7 @@ public class EnemyDetectionManager : MonoBehaviour
             PlayerContoroller player = collision.gameObject.GetComponent<PlayerContoroller>();
             if (player != null)   
             {
-                player.TakeDamage(enemyPatrol.damage);
+                player.TakeDamage(enemyBase.damage);
             }
         }
     }

@@ -35,7 +35,6 @@ public class EnemyPatrol : MonoBehaviour,IConveyorAddSpeeder
     {
         if (!isStart || isBlackHoleStay)
         {
-            //if (isBlackHoleStay) rb.linearVelocity = new Vector2(AddSpeed, rb.linearVelocity.y);
             isStart = false;
             return;
         }
