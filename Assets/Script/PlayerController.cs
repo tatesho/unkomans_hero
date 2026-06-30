@@ -42,6 +42,7 @@ public class PlayerContoroller : MonoBehaviour, IConveyorAddSpeeder
     [SerializeField] private PauseUIManager PauseUI;
     [SerializeField] private ItemSelectSystem itemSelectSystem;
     [SerializeField] private StageManager stageManager;
+    [SerializeField] private IsGroundChecker isGroundChecker;
 
     [SerializeField] private GameObject normalBlock;
     [SerializeField] private GameObject normalDesireBlock;
@@ -54,7 +55,7 @@ public class PlayerContoroller : MonoBehaviour, IConveyorAddSpeeder
     [SerializeField] private LayerMask playerStompLayer;
     [SerializeField] private LayerMask blackHoleLayer;
     [HideInInspector] public int currentHp => hp;
-    [HideInInspector] public bool isGrounded = false;
+    //[HideInInspector] public bool isGrounded = false;
 
     [HideInInspector] public bool canControl = true;
 
@@ -115,7 +116,7 @@ public class PlayerContoroller : MonoBehaviour, IConveyorAddSpeeder
         move = Input.GetAxis("Horizontal");
 
         anim.SetBool("Invincible", isInvincible);
-        anim.SetBool("isJump", isJump);
+        anim.SetBool("isJump", !isGroundChecker.isGround);
 
         //ジャンプバッファのカウント
         jumpBufferTimeCounter = TimeCount(
@@ -140,7 +141,7 @@ public class PlayerContoroller : MonoBehaviour, IConveyorAddSpeeder
 
         //コヨーテタイムのカウント
         coyoteTimeCounter = TimeCount(
-            Trigger: isGrounded,
+            Trigger: isGroundChecker.isGround,
             Counter: coyoteTimeCounter,
             ConstantTime: coyoteTime,
             Timer: Time.fixedDeltaTime);
@@ -223,7 +224,7 @@ public class PlayerContoroller : MonoBehaviour, IConveyorAddSpeeder
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             coyoteTimeCounter = 0;
             jumpBufferTimeCounter = 0;
-            isGrounded = false;
+            isGroundChecker.isGround = false;
             isJump = true;
         }
 

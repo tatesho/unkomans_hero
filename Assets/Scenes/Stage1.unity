@@ -991,6 +991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NeedleEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4840632194726310386, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7821052789969268433, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
       propertyPath: moveSpeed
       value: 2
@@ -1008,6 +1012,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
+--- !u!114 &1681771400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6927584999031952347, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+  m_PrefabInstance: {fileID: 4965719490994413815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bccac0f420b16d046a11bbe0af979db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsGroundChecker
 --- !u!1001 &1739860123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,6 +1075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NeedleEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4840632194726310386, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7821052789969268433, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
       propertyPath: moveSpeed
       value: 2
@@ -1088,6 +1107,10 @@ PrefabInstance:
     - target: {fileID: 5396362286503074160, guid: ae16ad9aa711e46438355df1c45efec3, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396362286503074160, guid: ae16ad9aa711e46438355df1c45efec3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6687254997379085485, guid: ae16ad9aa711e46438355df1c45efec3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1293,6 +1316,10 @@ PrefabInstance:
     - target: {fileID: 4840632194726310386, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
       propertyPath: m_Name
       value: NeedleEnemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840632194726310386, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7821052789969268433, guid: ac931531b1d30b445bee830f1a1d7aec, type: 3}
       propertyPath: moveSpeed
@@ -3402,6 +3429,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 906951380908894781, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 906951380908894781, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 928802993870941973, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.66498
@@ -3445,6 +3480,26 @@ PrefabInstance:
     - target: {fileID: 1214901207707602332, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
       propertyPath: m_TagString
       value: StompCheck
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605086561898119862, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605086561898119862, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605086561898119862, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186876145478996384, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186876145478996384, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 3704303423743983870, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
       propertyPath: m_IsActive
@@ -3506,6 +3561,10 @@ PrefabInstance:
       propertyPath: DesireBlackHole
       value: 
       objectReference: {fileID: 1432802899170543662, guid: d5c97445b988f0d47883ec262b95ceca, type: 3}
+    - target: {fileID: 8316432583469158288, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
+      propertyPath: isGroundChecker
+      value: 
+      objectReference: {fileID: 1681771400}
     - target: {fileID: 8316432583469158288, guid: 0901d7108632b4c4e976530c1709ebbf, type: 3}
       propertyPath: lowJumpMultiplier
       value: 5
