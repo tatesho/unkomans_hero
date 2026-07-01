@@ -34,20 +34,18 @@ public class SlimePatrol : EnemyBase
         Vector2 rayGroundDirection = Vector2.down;
 
         hitWall = Physics2D.Raycast(currentPos + new Vector3(contactWithoutMyself * direction, 0), rayWallDirection, rayWallDistance, groundLayer | enemyLayer);
-        hitGround = Physics2D.Raycast(currentPos + new Vector3(direction * 0.5f, 0.0f), rayGroundDirection, rayGroundDistance, groundLayer);
+        hitGround = Physics2D.Raycast(currentPos + new Vector3(direction * 0.2f, 0.0f), rayGroundDirection, rayGroundDistance, groundLayer);
         Debug.DrawRay(currentPos + new Vector3(contactWithoutMyself * direction, 0), rayWallDirection * rayWallDistance, Color.red);
-        Debug.DrawRay(currentPos + new Vector3(direction * 0.5f, 0.0f), rayGroundDirection * rayGroundDistance, Color.red);
+        Debug.DrawRay(currentPos + new Vector3(direction * 0.2f, 0.0f), rayGroundDirection * rayGroundDistance, Color.red);
 
         if (hitWall.collider != null) 
         { 
             Flip();
-            Debug.Log("hitWall.collider!=null:"+hitWall.collider);
         }
 
         if (hitGround.collider == null && GetComponentInChildren<IsGroundChecker>().isGround) 
         {
             Flip();
-            Debug.Log("hitGround.collider==null:"+ hitGround.collider);
         }
     }
 

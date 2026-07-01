@@ -52,7 +52,6 @@ public abstract class EnemyBase : MonoBehaviour, IConveyorAddSpeeder
     }
     protected void Flip()
     {
-        Debug.Log("’Ê‚Á‚½");
         direction *= -1;
         Vector3 scale = transform.localScale;
         scale.x *= -1.0f;

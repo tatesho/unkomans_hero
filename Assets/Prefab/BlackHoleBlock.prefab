@@ -77,7 +77,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8192
-  enemyPatrol: {fileID: 0}
 --- !u!1 &8631303379813987466
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +158,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1908833003
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3349929026005419240, guid: 77edf2f96298734489a0768f9f8b12db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -12,13 +12,14 @@ public class FallBlockSystem : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        countText = GetComponent<TextMeshPro>();
+        countText = GetComponentInChildren<TextMeshPro>();
         countText.text = "";
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" && !isFall)  
         {
+            Debug.Log("’Ê‚Á‚½");
             StartCoroutine(TextCountDown());
             isFall = true;
         }
