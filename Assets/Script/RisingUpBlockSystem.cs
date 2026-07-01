@@ -21,6 +21,7 @@ public class RisingUpBlockSystem : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        rb.gravityScale = -4.0f;
+        rb.gravityScale = -1.0f;
+        rb.mass = 7.5f;
     }
 }
