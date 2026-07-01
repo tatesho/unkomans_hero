@@ -16,30 +16,16 @@ public class BlackHoleSystem : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject);
-        //if (collision.gameObject.tag != "Player" || collision.gameObject.tag != "PlayerStompCheck") 
-        if (collision.gameObject.tag == "Enemy") 
-        {
-            //Debug.Log(collision.gameObject.tag);
-            //Rigidbody2D rb = collision.gameObject.GetComponentInParent<Rigidbody2D>();
-            //rb.gravityScale = 0.0f;
-        }
-        EnemyPatrol enemyPatrol=collision.GetComponentInParent<EnemyPatrol>();
-        if (enemyPatrol != null) enemyPatrol.isBlackHoleStay = true;
+        EnemyBase enemyBase=collision.GetComponentInParent<EnemyBase>();
+        if (enemyBase != null) enemyBase.isBlackHoleStay = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //if (collision.gameObject.tag != "Player" || collision.gameObject.tag != "PlayerStompCheck") 
-        if (collision.gameObject.tag == "Enemy")
+        EnemyBase enemyBase = collision.GetComponentInParent<EnemyBase>();
+        if (enemyBase != null)
         {
-            //Rigidbody2D rb = collision.gameObject.GetComponentInParent<Rigidbody2D>();
-            //rb.gravityScale = 1.0f;
-        }
-        EnemyPatrol enemyPatrol = collision.gameObject.GetComponentInParent<EnemyPatrol>();
-        if (enemyPatrol != null)
-        {
-            enemyPatrol.isBlackHoleStay = false;
-            if (collision.gameObject.GetComponent<Collider2D>().IsTouchingLayers(groundLayer)) enemyPatrol.isStart = true;
+            enemyBase.isBlackHoleStay = false;
+            if (collision.gameObject.GetComponent<Collider2D>().IsTouchingLayers(groundLayer)) enemyBase.isStart = true;
         }
     }
 }

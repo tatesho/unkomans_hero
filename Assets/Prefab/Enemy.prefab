@@ -101,7 +101,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5782211052249778247}
   - component: {fileID: 1314532442160597171}
-  - component: {fileID: 3385196191313184636}
   m_Layer: 7
   m_Name: EnemyCollider
   m_TagString: Enemy
@@ -158,7 +157,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.22}
+  m_Offset: {x: 0, y: -0.17}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -168,30 +167,8 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.82, y: 0.55}
+  m_Size: {x: 0.82, y: 0.45}
   m_EdgeRadius: 0.15
---- !u!95 &3385196191313184636
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3068696905865854857}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dc2a487cd3c047448af29cdb48ba6a90, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5277048370358290686
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,9 +256,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6687254997379085485}
-  - component: {fileID: 495308653808199210}
   - component: {fileID: 2243856205854818561}
   - component: {fileID: 6208352034275346641}
+  - component: {fileID: 2344611583761887230}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -306,34 +283,9 @@ Transform:
   - {fileID: 5968348559322282469}
   - {fileID: 8006130209849447562}
   - {fileID: 533366258183048848}
+  - {fileID: 6187420542924507654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &495308653808199210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5396362286503074160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccaf3080e63ece1428f08983060f1737, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyPatrol
-  moveSpeed: 2
-  moveDistance: 7
-  destroyTime: 0.1
-  rayWallDistance: 0.01
-  rayGroundDistance: 1.65
-  contactWithoutMyself: 0.65
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8192
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  damage: 2
-  isBlackHoleStay: 0
 --- !u!50 &2243856205854818561
 Rigidbody2D:
   serializedVersion: 5
@@ -359,7 +311,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &6208352034275346641
 Animator:
@@ -383,6 +335,115 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2344611583761887230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396362286503074160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b9ed0809d66d941ad5b047bf96b47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlimePatrol
+  moveSpeed: 2
+  destroyTime: 0.1
+  damage: 2
+  isStart: 0
+  isBlackHoleStay: 0
+  rayWallDistance: 0.01
+  rayGroundDistance: 1.65
+  contactWithoutMyself: 0.65
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!1 &6956138393878888398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6187420542924507654}
+  - component: {fileID: 4002600106334351568}
+  - component: {fileID: 6338820912273167465}
+  m_Layer: 7
+  m_Name: GroundChecker
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6187420542924507654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956138393878888398}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6687254997379085485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &4002600106334351568
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956138393878888398}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.6}
+  m_Size: {x: 1.1, y: 0.1}
+  m_Direction: 1
+--- !u!114 &6338820912273167465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6956138393878888398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bccac0f420b16d046a11bbe0af979db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IsGroundChecker
+  isGround: 0
 --- !u!1 &8647506711264789053
 GameObject:
   m_ObjectHideFlags: 0

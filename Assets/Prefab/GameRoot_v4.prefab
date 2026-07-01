@@ -982,7 +982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccac0f420b16d046a11bbe0af979db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IsGroundChecker
-  player: {fileID: 9118738715032111565}
+  isGround: 0
 --- !u!61 &1464041347119391304
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1027,7 +1027,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.04}
+  m_Size: {x: 0.7, y: 0.04}
   m_EdgeRadius: 0.02
 --- !u!70 &1330039012345942779
 CapsuleCollider2D:
@@ -1063,8 +1063,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.37}
-  m_Size: {x: 0.55, y: 0.07}
+  m_Offset: {x: 0, y: 0.4}
+  m_Size: {x: 0.6, y: 0.15}
   m_Direction: 1
 --- !u!1 &1687908880812515251
 GameObject:
@@ -1790,6 +1790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerContoller
   moveSpeed: 5
+  dashMultiplier: 3
   jumpForce: 15.5
   fallMultiplier: 2.5
   lowJumpMultiplier: 4
@@ -1798,11 +1799,13 @@ MonoBehaviour:
   invincibleDuration: 2
   hp: 5
   gameOverDelay: 2
+  deedlyHeight: -5
   jumpSE: {fileID: 8300000, guid: 8dd74859e4c7b7c43bc993473805516a, type: 3}
   putSE: {fileID: 8300000, guid: 5558de00c5f47324aaf511f681ea09df, type: 3}
   PauseUI: {fileID: 3411433199397793912}
   itemSelectSystem: {fileID: 5278701187826166986}
   stageManager: {fileID: 1069031506125491363, guid: 6382a919fa7271e45a32875897fd2cfc, type: 3}
+  isGroundChecker: {fileID: 6074548373339088540}
   normalBlock: {fileID: 1269371828317832546, guid: 23e79300ae68419439f53fdf0e8d105a, type: 3}
   normalDesireBlock: {fileID: 824988171026756891, guid: 1f943e1eb2ab29d4fa661d7a0344061b, type: 3}
   fallBlock: {fileID: 2230311453104876196, guid: 665fa8d8ed8e1ec4a9ff4fcc5314ec1b, type: 3}
@@ -1816,7 +1819,6 @@ MonoBehaviour:
   blackHoleLayer:
     serializedVersion: 2
     m_Bits: 16384
-  isGrounded: 0
   canControl: 1
   isJump: 0
   blockQuantity: 
@@ -1876,7 +1878,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.04}
+  m_Offset: {x: 0, y: 0.01}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1886,7 +1888,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.45, y: 0.53}
+  m_Size: {x: 0.45, y: 0.58}
   m_EdgeRadius: 0.1
 --- !u!82 &4046630982407813458
 AudioSource:

@@ -6,7 +6,7 @@ public class PlayerStomp:MonoBehaviour
     [SerializeField] private AudioClip stompSE;
     private AudioSource audioSource;
     private Rigidbody2D playerRb;
-    private EnemyPatrol enemyPatrol;
+    private EnemyBase enemyBase;
     private void Start()
     {
         playerRb= GetComponentInParent<Rigidbody2D>();
@@ -18,8 +18,10 @@ public class PlayerStomp:MonoBehaviour
         {
             audioSource.PlayOneShot(stompSE, 1.0f);
             Vector2 currentVec = playerRb.linearVelocity;
-            enemyPatrol = collision.gameObject.GetComponentInParent<EnemyPatrol>();
-            StartCoroutine(enemyPatrol.ThisDestroy());
+
+            enemyBase = collision.gameObject.GetComponentInParent<EnemyBase>();
+            if (enemyBase != null) StartCoroutine(enemyBase.ThisDestroy());
+
             playerRb.linearVelocity = new Vector2(currentVec.x, bounceForce);
         }
     }
